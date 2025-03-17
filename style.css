@@ -25,7 +25,7 @@ header {
 }
 
 .logo {
-    width: 200px;
+    width: 500px;
     display: flex;
     align-items: center; /* Ensure vertical alignment */
     z-index: 10;
@@ -60,7 +60,7 @@ header {
 }
 
 .menu-toggle {
-    font-size: 20px;
+    font-size: 200px;
     color: #e890eb; /* Pink */
     cursor: pointer;
     display: block;
