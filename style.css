@@ -60,7 +60,7 @@ header {
 }
 
 .menu-toggle {
-    font-size: 25px;
+    font-size: 32px;
     color: #e890eb; /* Pink */
     cursor: pointer;
     display: block;
@@ -240,7 +240,7 @@ footer {
 
 @media (max-width: 1024px) {
     .video-section {
-        height: 75vh; /* Smaller height on tablets */
+        height: 65vh; /* Smaller height on tablets */
     }
         header {
         padding: 15px 20px;
@@ -291,7 +291,7 @@ footer {
 
 @media (max-width: 768px) {
     .video-section {
-        height: 75vh; /* Even smaller height on mobile */
+        height: 65vh; /* Even smaller height on mobile */
     }
         header {
         padding: 15px 20px;
@@ -342,7 +342,7 @@ footer {
 
 @media (max-width: 480px) {
     .video-section {
-        height: 75vh; /* Compact height for small devices */
+        height: 65vh; /* Compact height for small devices */
     }
 
     header {
