@@ -84,14 +84,7 @@ header {
     display: flex;
 }
 
-#black {
-    width: 100%;
-    position: absolute; /* Position it absolutely */
-    top: 420px;
-    border-radius: 35px;
-    z-index: 2; /* Ensure it stays above the video */
-    
-}
+
 
 /* Additional styles to ensure the video is in the background */
 .video-section {
