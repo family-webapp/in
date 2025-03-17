@@ -60,7 +60,7 @@ header {
 }
 
 .menu-toggle {
-    font-size: 30px;
+    font-size: 45px;
     color: #e890eb; /* Pink */
     cursor: pointer;
     display: block;
@@ -128,7 +128,6 @@ section h1 {
     position: absolute;
     width: 40px;
     margin-left: 30px;
-    margin-top: 15px;
     z-index: 4;
 }
 #mem-icon{
@@ -247,19 +246,19 @@ footer {
 
 @media (max-width: 1024px) {
     .video-section {
-        height: 80vh; /* Smaller height on tablets */
+        height: 88vh; /* Smaller height on tablets */
     }
 }
 
 @media (max-width: 768px) {
     .video-section {
-        height: 78vh; /* Even smaller height on mobile */
+        height: 88vh; /* Even smaller height on mobile */
     }
 }
 
 @media (max-width: 480px) {
     .video-section {
-        height: 78vh; /* Compact height for small devices */
+        height: 80vh; /* Compact height for small devices */
     }
 
     header {
