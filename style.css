@@ -25,7 +25,7 @@ header {
 }
 
 .logo {
-    width: 100px;
+    width: 110px;
     display: flex;
     align-items: center; /* Ensure vertical alignment */
     z-index: 10;
@@ -60,7 +60,7 @@ header {
 }
 
 .menu-toggle {
-    font-size: 45px;
+    font-size: 25px;
     color: #e890eb; /* Pink */
     cursor: pointer;
     display: block;
@@ -239,19 +239,107 @@ footer {
 
 @media (max-width: 1024px) {
     .video-section {
-        height: 88vh; /* Smaller height on tablets */
+        height: 75vh; /* Smaller height on tablets */
+    }
+        header {
+        padding: 15px 20px;
+    }
+
+    section {
+        padding: 30px;
+    }
+
+    section h2, section p {
+        text-align: left;
+    }
+    .black{
+        width: 100%;
+        position: absolute;
+
+    }
+    th, td {
+        width: 100%;
+        font-size: 12px; /* Adjust font size for small screens */
+    }
+    #sur-icon {
+        margin-top: 50px;
+        position: absolute;
+        width: 45px;
+        margin-left: 30px;
+        z-index: 4;
+    }
+    #mem-icon{
+        position: absolute;
+        width: 45px;
+        margin-left: 30px;
+        z-index: 4;
+    }
+    #pro-icon{
+        position: absolute;
+        width: 55px;
+        margin-left: 30px;
+        z-index: 4;
+    }
+
+    section img {
+        width: 100%;
     }
 }
 
+
 @media (max-width: 768px) {
     .video-section {
-        height: 88vh; /* Even smaller height on mobile */
+        height: 75vh; /* Even smaller height on mobile */
     }
+        header {
+        padding: 15px 20px;
+    }
+
+    section {
+        padding: 30px;
+    }
+
+    section h2, section p {
+        text-align: left;
+    }
+    .black{
+        width: 100%;
+        position: absolute;
+
+    }
+    th, td {
+        width: 100%;
+        font-size: 12px; /* Adjust font size for small screens */
+    }
+    #sur-icon {
+        margin-top: 50px;
+        position: absolute;
+        width: 45px;
+        margin-left: 30px;
+        z-index: 4;
+    }
+    #mem-icon{
+        position: absolute;
+        width: 45px;
+        margin-left: 30px;
+        z-index: 4;
+    }
+    #pro-icon{
+        position: absolute;
+        width: 55px;
+        margin-left: 30px;
+        z-index: 4;
+    }
+
+    section img {
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 480px) {
     .video-section {
-        height: 80vh; /* Compact height for small devices */
+        height: 75vh; /* Compact height for small devices */
     }
 
     header {
@@ -275,21 +363,21 @@ footer {
         font-size: 12px; /* Adjust font size for small screens */
     }
     #sur-icon {
-        margin-top: 15px;
+        margin-top: 50px;
         position: absolute;
-        width: 35px;
+        width: 45px;
         margin-left: 30px;
         z-index: 4;
     }
     #mem-icon{
         position: absolute;
-        width: 33px;
+        width: 45px;
         margin-left: 30px;
         z-index: 4;
     }
     #pro-icon{
         position: absolute;
-        width: 46px;
+        width: 55px;
         margin-left: 30px;
         z-index: 4;
     }
