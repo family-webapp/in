@@ -1,0 +1,111 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: url('surveywall.jpg') no-repeat center center fixed;
+    background-size: 100% 100%; /* Ensures full width & height without zooming */
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    min-height: 100vh;
+}
+form {
+    background: rgba(18, 20, 22, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+    margin-top: 20PX;
+    position: relative;
+    z-index: 1;
+}
+
+section div {
+    margin-bottom: 15px;
+}
+
+p {
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    color: #e6e6e6;
+}
+
+/* Styling radio buttons horizontally */
+div input[type="radio"] {
+    display: none;
+}
+
+div label {
+    display: inline-block;
+    background: #e0e0e0;
+    padding: 12px 15px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    width: 80%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background 0.3s;
+}
+
+div input[type="radio"]:checked + label {
+    background:#086fcf;
+    color: #fff;
+}
+
+/* Styling text inputs */
+input[type="text"] {
+    width: 79%;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 15px;
+    margin-left: 22px;
+    border: 1px solid #e6e4e4;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* Submit Button */
+button {
+    background: #007bff;
+    color: #fff;
+    padding: 12px 18px;
+    border: none;
+    margin-left: 28px;
+    border-radius: 5px;
+    margin-top: 35px;
+    cursor: pointer;
+    width: 85%;
+    font-size: 18px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+    div label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+        width: 80%;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 15px;
+        margin-left: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+    
+}

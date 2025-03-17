@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="forgot-style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Try logging in again!</h2>
+        <p>you know what code you have to enter.</p>
+        <main>
+            <form id="loginform">
+                <div>
+                    <label for="name">Name </label>
+                    <input id="name" type="text" placeholder="Enter your name" required>
+                </div>
+                <div>
+                    <label for="code">Code</label>
+                    <input id="code" type="password" placeholder="Enter The Code">
+                </div>
+                <div>
+                    <button type="submit">Next</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="script2.js">
+        document.getElementById("loginform").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent actual form submission
+            window.location.href = "home.html"; // Redirect to home page
+        });
+    </script>
+</body>
+
+</html>

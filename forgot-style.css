@@ -1,0 +1,94 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        background: url('backgroundimg.jpg') no-repeat center center/cover;
+    }
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.658);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 105, 180, 0.5);
+    width: 350px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #f3e8e9;
+    margin-right: 60px;
+}
+p{
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+form div {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    color: #fff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.123);
+    color: white;
+    outline: none;
+    font-size: 14px;
+    
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+    margin-top: 50px;
+    margin-left: 200px;
+    padding: 7px; 
+    width: 90px;
+    border: none;
+    border-radius: 5px;
+    background: #ff4f5a;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #ff2e3c;
+    box-shadow: 0px 0px 10px rgba(255, 79, 90, 0.7);
+}
+
+

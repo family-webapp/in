@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login.io</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop id="background-video">
+            <source src="background2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+   
+    <main>
+        <form id="loginform" action="">
+          <!-- <h1>Welcome back!</h1> -->
+            <h2>Login to start!</h2>
+            <p>enter the details to continue</p>
+            <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="username" required>
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input id="age" name="age" type="number" placeholder="Enter your age" required>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Password" required>
+            </div>
+            <a href="main.html">Forgot password</a>
+            <div>
+                <button type="submit">Next</button>
+            </div>
+        </form>
+    </main>
+
+<script src="script.js">
+    
+        document.getElementById("loginform").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent actual form submission
+            window.location.href = "home.html"; // Redirect to home page
+        });
+    </script>
+    
+</body>
+
+</html>
