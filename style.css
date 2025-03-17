@@ -25,7 +25,7 @@ header {
 }
 
 .logo {
-    width: 500px;
+    width: 100px;
     display: flex;
     align-items: center; /* Ensure vertical alignment */
     z-index: 10;
@@ -60,7 +60,7 @@ header {
 }
 
 .menu-toggle {
-    font-size: 200px;
+    font-size: 30px;
     color: #e890eb; /* Pink */
     cursor: pointer;
     display: block;
@@ -126,7 +126,7 @@ section h1 {
 }
 #sur-icon {
     position: absolute;
-    width: 30px;
+    width: 40px;
     margin-left: 30px;
     margin-top: 15px;
     z-index: 4;
@@ -147,8 +147,8 @@ section h2 {
     color: #ffffff; /* White color for h2 */
     font-family: 'helvetica', sans-serif;
     text-align: left;
-    margin-top: 30px;
-    font-size: 11px;
+    margin-top: 50px;
+    font-size: 14px;
     margin-bottom: 10px;
     margin-right: 90px;
     position: relative;/* Position it absolutely */
@@ -161,9 +161,9 @@ section h3 {
     color: #ffffff; /* White color for h3 */
     font-family: 'Helvetica', sans-serif;
     text-align: left;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 10px;
-    font-size: 11px;
+    font-size: 14px;
     
 }
 
@@ -178,7 +178,7 @@ section img {
 }
 
 section p {
-    font-size: 9px;
+    font-size: 12px;
     font-family: 'futura', sans-serif;
     color: #ddcaca; /* White color for paragraph text */
     text-align: left;
@@ -203,7 +203,7 @@ a {
 }
 
 .biography h4 {
-    font-family: 'Cursive', sans-serif;
+    font-family: 'helvetica', sans-serif;
     font-size: 12px;
     color: rgb(209, 200, 200);
     text-align: left;
@@ -285,19 +285,19 @@ footer {
     #sur-icon {
         margin-top: 15px;
         position: absolute;
-        width: 26px;
+        width: 35px;
         margin-left: 30px;
         z-index: 4;
     }
     #mem-icon{
         position: absolute;
-        width: 25px;
+        width: 33px;
         margin-left: 30px;
         z-index: 4;
     }
     #pro-icon{
         position: absolute;
-        width: 33px;
+        width: 46px;
         margin-left: 30px;
         z-index: 4;
     }
