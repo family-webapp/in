@@ -132,6 +132,34 @@
         <button type="submit">Submit</button>
         </form>
     </section>
+
+            <script>
+document.querySelector("surveyform").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var name = localStorage.getItem("surveyName");
+    var date = localStorage.getItem("surveyDate");
+
+    var answers = [];
+    document.querySelectorAll("input[type='radio']:checked, input[type='text']").forEach(input => {
+        answers.push(input.value);
+    });
+
+    var formData = { name: name, date: date, answers: answers };
+
+    fetch("https://script.google.com/macros/s/AKfycbxixyR_5jy-GbX0WE4-HdksGe9-h16Wqt5WQslXuLU4ANHDPinS_sPvQb-9m7uOIM2U/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert("Survey submitted successfully!");
+        window.location.href = "home.html"; // Redirect after submission
+    })
+    .catch(error => console.error("Error:", error));
+});
+</script>
 </body>
 
 </html>
