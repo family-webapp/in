@@ -4,7 +4,7 @@ document.getElementById("loginform").addEventListener("submit", async function (
     const username = document.getElementById("name").value.trim();
     const code = document.getElementById("code").value.trim();
 
-    const apiUrl = "https://script.google.com/macros/s/AKfycbzP2mgbyzEm4Oq0PQwU5nuyVCcp9YorDbdc02EzDJDo0pzzjdIpIU-Ku4_MTbmnn8m7NQ/exec" + 
+    const apiUrl = "https://script.google.com/macros/s/AKfycbwcWLEnm1QINBdnzAVX1cq9_thbnwlwm7GtgwknmLeF4Owa3gF8dX9XLNtjs0dTAFqtcg/exec" + 
                    `?username=${encodeURIComponent(username)}&code=${encodeURIComponent(code)}`;
 
     try {
