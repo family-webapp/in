@@ -5,7 +5,7 @@ document.getElementById("loginform").addEventListener("submit", async function (
     const age = document.getElementById("age").value.trim();
     const password = document.getElementById("password").value.trim();
 
-    const apiUrl = "https://script.google.com/macros/s/AKfycbycZVySFJZcYT98my5WH4WqVNkXD8rXzJYeddm8injbpC25UyKPDfivZTSBjg3dZpPnig/exec" + 
+    const apiUrl = "https://script.google.com/macros/s/AKfycbzEwvV-M2XBTDK_nCb0VUURGOExatMflSAIY-UxF8vdWKr6GZebJo0-QwJbRwTF7VecSg/exec" + 
                    `?username=${encodeURIComponent(username)}&age=${encodeURIComponent(age)}&password=${encodeURIComponent(password)}`;
 
     try {
