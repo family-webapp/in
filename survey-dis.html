@@ -140,12 +140,20 @@
             <button type="submit">Let's start</button>
         </form>
     </div>
-    <script>   document.getElementById("loginform").addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent actual form submission
-            window.location.href = "survey.html"; // Redirect to home page
-
-       
-    });</script>
+ <script>
+        document.getElementById("loginform").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var name = document.getElementById("name").value;
+            var date = document.getElementById("date").value;
+        
+            // Save Name and Date in localStorage for survey page
+            localStorage.setItem("surveyName", name);
+            localStorage.setItem("surveyDate", date);
+        
+            // Redirect to survey page
+            window.location.href = "survey.html";
+        });
+        </script>
 </body>
 
 </html>
