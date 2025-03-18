@@ -230,7 +230,8 @@
     </section>
 
             <script>
-document.querySelector("surveyform").addEventListener("submit", function(event) {
+
+document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
 
     var name = localStorage.getItem("surveyName");
@@ -241,20 +242,23 @@ document.querySelector("surveyform").addEventListener("submit", function(event) 
         answers.push(input.value);
     });
 
-    var formData = { name: name, date: date, answers: answers };
+    var formData = JSON.stringify({ name: name, date: date, answers: answers });
 
-    fetch("https://script.google.com/macros/s/AKfycbxixyR_5jy-GbX0WE4-HdksGe9-h16Wqt5WQslXuLU4ANHDPinS_sPvQb-9m7uOIM2U/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbyGUk927pdgWxTVFWSTLyhXvUVXMkOKg6ms494XOmaLSLH7N2p9zM4Yb2-xa8k2FY6n/exec", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: formData
     })
     .then(response => response.text())
     .then(data => {
         alert("Survey submitted successfully!");
-        window.location.href = "home.html"; // Redirect after submission
+        window.location.href = "home.html"; 
     })
     .catch(error => console.error("Error:", error));
 });
+
 </script>
 </body>
 
