@@ -10,7 +10,7 @@
 
 <body>
 
-        <form action="">
+        <form id ="loginform" action="">
             <section>
             <div>
                 <p>1.which of the given colours are most liked by Manash?</p>
@@ -231,7 +231,7 @@
 
             <script>
 
-document.querySelector("form").addEventListener("submit", function(event) {
+document.querySelector("loginform").addEventListener("submit", function(event) {
     event.preventDefault();
 
     var name = localStorage.getItem("surveyName");
