@@ -229,7 +229,44 @@
         </form>
     </section>
 
+   <script>
+        document.getElementById("surveyform").addEventListener("submit", function (event) {
+            event.preventDefault();
 
+            let formData = {
+        "fav-color": document.querySelector('input[name="fav-color"]:checked')?.value || "",
+        "fav-drink": document.querySelector('input[name="fav-drink"]:checked')?.value || "",
+        "fav-food": document.querySelector('input[name="fav-food"]:checked')?.value || "",
+        "fav-person": document.querySelector('input[name="fav-person"]:checked')?.value || "",
+        "fav-song": document.querySelector('input[name="fav-song"]:checked')?.value || "",
+        "fav-singer": document.querySelector('input[name="fav-singer"]:checked')?.value || "",
+        "behave": document.querySelector('input[name="behave"]:checked')?.value || "",
+        "description": document.querySelector('input[type="text"]')?.value || "",
+        "app": document.querySelector('input[name="app"]:checked')?.value || "",
+        "fav-activity": document.querySelector('input[name="fav-activity"]:checked')?.value || "",
+        "fav-sport": document.querySelector('input[name="fav-sport"]:checked')?.value || "",
+        "fav-m-inst": document.querySelector('input[name="fav-m-inst"]:checked')?.value || "",
+        "fav-sea": document.querySelector('input[name="fav-sea"]:checked')?.value || "",
+        "personality": document.querySelector('input[type="text"]')?.value || ""
+    };
+
+            fetch("https://script.google.com/macros/s/AKfycbxYngh7-QFr56rhC600m3SaHcsBtLwYby6xRIYHS4K_OEkgUj-OaVRrEE3VY9c1KC3Dvg/exec", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                mode: "no-cors", // Prevents CORS errors
+                body: JSON.stringify(formData)
+            })
+            .then(() => {
+                alert("Survey Submitted Successfully!");
+                document.getElementById("surveyform").reset();
+                window.location.href = "home.html";
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Submission failed. Try again!");
+            });
+        });
+    </script>
 </body>
 
 </html>
