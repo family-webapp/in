@@ -216,7 +216,7 @@
                     <label for="spring">spring</label>
 
                     <input id="day-bet" type="radio" name="fav-sea" value="day-bet">
-                    <label for="piano">Days between rainy and winter season.</label>
+                    <label for="day-bet">Days between rainy and winter season.</label>
                 </div>
 
                 <div>
@@ -229,37 +229,7 @@
         </form>
     </section>
 
-            <script>
 
-document.querySelector("surveyform").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    var name = localStorage.getItem("surveyName");
-    var date = localStorage.getItem("surveyDate");
-
-    var answers = [];
-    document.querySelectorAll("input[type='radio']:checked, input[type='text']").forEach(input => {
-        answers.push(input.value);
-    });
-
-    var formData = JSON.stringify({ name: name, date: date, answers: answers });
-
-    fetch("https://script.google.com/macros/s/AKfycbyGUk927pdgWxTVFWSTLyhXvUVXMkOKg6ms494XOmaLSLH7N2p9zM4Yb2-xa8k2FY6n/exec", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert("Survey submitted successfully!");
-        window.location.href = "home.html"; 
-    })
-    .catch(error => console.error("Error:", error));
-});
-
-</script>
 </body>
 
 </html>
