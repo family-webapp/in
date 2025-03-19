@@ -140,20 +140,29 @@
             <button type="submit">Let's start</button>
         </form>
     </div>
- <script>
-        document.getElementById("loginform").addEventListener("submit", function(event) {
-            event.preventDefault();
-            var name = document.getElementById("name").value;
-            var date = document.getElementById("date").value;
-        
-            // Save Name and Date in localStorage for survey page
-            localStorage.setItem("surveyName", name);
-            localStorage.setItem("surveyDate", date);
-        
-            // Redirect to survey page
+    
+  <script>
+        document.getElementById("myForm").addEventListener("submit", function(e) {
+          e.preventDefault();
+      
+          let formData = {
+            name: this.name.value,
+            date: this.date.value
+          };
+      
+          fetch("https://script.google.com/macros/s/AKfycbyeRQKjBOZJCoEQsqZrll-BKnVHjOlywudbRsmWdC6KeY3vLHeOUYm7whkoyJmwLXx4Ig/exec", {
+            method: "POST",
+            mode: "no-cors",  // No CORS mode
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+          })
+          .then(() => {
             window.location.href = "survey.html";
+        })
+          .catch(error => console.error("Error:", error));
         });
-        </script>
+      </script>
+    
 </body>
 
 </html>
