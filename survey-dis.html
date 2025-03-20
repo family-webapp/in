@@ -144,7 +144,7 @@
   <script>
         document.getElementById("myForm").addEventListener("submit", function(e) {
           e.preventDefault();  
-            window.location.href = "https://github.com/family-webapp/in/blob/main/survey.html"; // Redirect to home page
+        
         });
       
           let formData = {
@@ -154,12 +154,12 @@
       
           fetch("https://script.google.com/macros/s/AKfycbyeRQKjBOZJCoEQsqZrll-BKnVHjOlywudbRsmWdC6KeY3vLHeOUYm7whkoyJmwLXx4Ig/exec", {
             method: "POST",
-            mode: "no-cors",  // No CORS mode
+        
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
           })
           .then(() => {
-            
+              window.location.href = "survey.html"; 
         })
           .catch(error => console.error("Error:", error));
         });
