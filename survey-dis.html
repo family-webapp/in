@@ -142,27 +142,30 @@
     </div>
     
  
-        <script>
-        document.getElementById("myForm").addEventListener("submit", function(e) {
-          e.preventDefault();
-      
-          let formData = {
-            name: this.name.value,
-            date: this.date.value
-          };
-      
-          fetch("https://script.google.com/macros/s/AKfycbyeRQKjBOZJCoEQsqZrll-BKnVHjOlywudbRsmWdC6KeY3vLHeOUYm7whkoyJmwLXx4Ig/exec", {
-            method: "POST",
-         
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
-          })
-          .then(() => {
-            window.location.href = "survey.html";
-        })
-          .catch(error => console.error("Error:", error));
-        });
-      </script>
+      <script>
+  document.getElementById("myForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let formData = {
+      name: this.name.value,
+      date: this.date.value
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbyeRQKjBOZJCoEQsqZrll-BKnVHjOlywudbRsmWdC6KeY3vLHeOUYm7whkoyJmwLXx4Ig/exec", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.json()) // Ensure response is handled properly
+    .then(data => {
+      console.log("Success:", data);
+      window.location.href = "survey.html"; // Redirect on success
+    })
+    .catch(error => console.error("Error:", error));
+  });
+</script>
+  
+    
     
 </body>
 
