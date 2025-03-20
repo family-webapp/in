@@ -141,9 +141,8 @@
         </form>
     </div>
     
- 
-      <script>
-  document.getElementById("myForm").addEventListener("submit", function (e) {
+<script>
+  document.getElementById("myForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
     let formData = {
@@ -153,18 +152,18 @@
 
     fetch("https://script.google.com/macros/s/AKfycbyeRQKjBOZJCoEQsqZrll-BKnVHjOlywudbRsmWdC6KeY3vLHeOUYm7whkoyJmwLXx4Ig/exec", {
       method: "POST",
+      mode: "no-cors",  // No CORS mode
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)
     })
-    .then(response => response.json()) // Ensure response is handled properly
-    .then(data => {
-      console.log("Success:", data);
-      window.location.href = "survey.html"; // Redirect on success
+    .then(() => {
+      alert("Participated successfully!");
+      window.location.href = "survey.html"; // Redirect to survey.html
     })
     .catch(error => console.error("Error:", error));
   });
 </script>
-  
+
     
     
 </body>
