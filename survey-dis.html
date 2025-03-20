@@ -141,11 +141,10 @@
         </form>
     </div>
     
-  <script>
+ 
+        <script>
         document.getElementById("myForm").addEventListener("submit", function(e) {
-          e.preventDefault();  
-        
-        });
+          e.preventDefault();
       
           let formData = {
             name: this.name.value,
@@ -154,12 +153,12 @@
       
           fetch("https://script.google.com/macros/s/AKfycbyeRQKjBOZJCoEQsqZrll-BKnVHjOlywudbRsmWdC6KeY3vLHeOUYm7whkoyJmwLXx4Ig/exec", {
             method: "POST",
-        
+         
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
           })
           .then(() => {
-              window.location.href = "survey.html"; 
+            window.location.href = "survey.html";
         })
           .catch(error => console.error("Error:", error));
         });
