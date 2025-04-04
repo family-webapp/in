@@ -4,44 +4,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>help</title>
+    <title>Help</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        section {
+            padding: 20px;
+            background: #fff;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007BFF;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        div b {
+            margin-top: 10px;
+            display: block;
+        }
+
+        div p {
+            font-size: 0.95em;
+            line-height: 1.4;
+            margin-bottom: 5px;
+        }
+        
+
+        video,
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 5px;
+            border: none;
+            /* Make sure no border shows */
+            box-shadow: none;
+            /* Remove any shadows */
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 5px 0;
+            font-size: 1em;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 15px;
+                margin: 5px;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            div p,
+            li {
+                font-size: 0.95em;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <section>
-        <h2>Q. how to use the website ? </h2>
+        <h2>Q. How to use the website?</h2>
 
         <div>
-            <p>1. you can opinions by visiting "surveys" icon in top right corner. </p>
-        </div>
-        <div>
+            <b>1. How to participate in daily "surveys"?</b>
+            <p>Step 1: Click on hamburger menu in top right corner</p>
+            <p>Step 2: Choose the surveys option from the nav links</p>
+            <p>Step 3: Enter the details and be part of the survey</p>
+            <p>Lastly: Click on submit button to submit the survey.</p>
             <p>Visual help:</p>
+            <video autoplay muted loop>
+                <source src="help-mem.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
-        <img src="pexels.jpg" alt="from here you can give surveys" width="420px" height="400px">
-        <div>
-            <p>2. you can see profile of family members by visiting "aboutus" in the left side of "surveys" icon. </p>
-        </div>
-        <div>
-            <p>Visual help:</p>
-        </div>
-
-        <img src="pexels.jpg" alt="from here you can see profiles" width="420px" height="400px">
     </section>
+
     <section>
         <div>
-            <p>3. you can see results of daily surveys on the bottom of the home page. </p>
+            <b>2. Discover old pictures by visiting "Memories" section!</b>
+            <p>Step 1: Choose the memories option from the nav links</p>
+            <p>Step 2: Take preview by clicking on the picture</p>
+            <p>Step 3: Click on download button to download locally</p>
+            <p>Visual help:</p>
+            <video autoplay muted loop>
+                <source src="help-mem.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
-        <p>Visual help:</p>
-        <img src="pexels.jpg" alt="from here you can see profiles" width="420px" height="400px">
+    </section>
 
-        <p>Note:</p>
+    <section>
+        <div>
+            <b>3. You can see family-members details and favorites on profile page!</b>
+            <p>Note: This page is still in progress...</p>
+            <p>Visual help:</p>
+            <img src="profile-help.jpg" alt="Profile Help Image">
+        </div>
+    </section>
+
+    <section>
+        <p><b>Note:</b></p>
         <ul>
-            <li>For details of all surveys conducted till now visit the page"results"(in the bottom of about us)</li>
-            <li>Everyone who has provided the passcode of this website have access of all the data available on the
-                website>
-            </li>
+            <li>For details of all surveys conducted till now, visit the page "Results" (in the bottom of About Us)</li>
+            <li>Everyone who has provided the passcode of this website has access to all the data available on the
+                website</li>
         </ul>
-
     </section>
 </body>
 
