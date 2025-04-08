@@ -208,7 +208,8 @@
                     remainingTime--;
                 } else {
                     clearInterval(timerInterval);
-                    alert("The survey time is over!");
+                    alert("survey's timeout!");
+                    window.location.href = "home.html";
                     // Optional: disable form or redirect here
                 }
             }
@@ -218,7 +219,7 @@
         }
 
         // Start the countdown from 15 minutes (900 seconds)
-        startCountdown(900);
+        startCountdown(86400);
 
         // Form submission
         document.getElementById("myForm").addEventListener("submit", function (e) {
