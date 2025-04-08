@@ -109,6 +109,44 @@
         button:hover {
             background: #21afb9;
         }
+        /* Timer styles */
+        .countdown-container {
+            position: absolute;
+            top: 30px;
+            right: 25px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-family: 'helvetica', sans-serif;
+            padding: 6px 9px;
+            border-radius: 12px;
+        }
+
+        .label {
+            font-size: 20px;
+            font-weight: bold;
+            color: #B2A5FF;
+            margin-right: 10px;
+        }
+
+        .time-box {
+            width: 32px;
+            height: 32px;
+            background-color: #000000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 3px;
+        }
+
+        .colon {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000000;
+        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -121,6 +159,17 @@
 </head>
 
 <body>
+
+     <!-- Countdown Timer -->
+    <div class="countdown-container">
+        <span class="label">Ends In:</span>
+        <div class="time-box" id="hours">00</div>
+        <div class="colon">:</div>
+        <div class="time-box" id="minutes">00</div>
+        <div class="colon">:</div>
+        <div class="time-box" id="seconds">00</div>
+    </div>
+    
     <h2>Welcome</h2>
     <h3>to the First Survey</h3>
     <p>The earliest survey of our website is about Manash. I am deeply grateful to everyone for investing their time
@@ -142,26 +191,57 @@
     </div>
     
 <script>
-  document.getElementById("myForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+      // Countdown logic
+        function startCountdown(durationInSeconds) {
+            let remainingTime = durationInSeconds;
 
-    let formData = {
-      name: this.name.value,
-      date: this.date.value
-    };
+            function updateTimer() {
+                let hours = Math.floor(remainingTime / 3600);
+                let minutes = Math.floor((remainingTime % 3600) / 60);
+                let seconds = remainingTime % 60;
 
-    fetch("https://script.google.com/macros/s/AKfycbyeRQKjBOZJCoEQsqZrll-BKnVHjOlywudbRsmWdC6KeY3vLHeOUYm7whkoyJmwLXx4Ig/exec", {
-      method: "POST",
-      mode: "no-cors",  // No CORS mode
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
-    })
-    .then(() => {
-      alert("Participated successfully!");
-      window.location.href = "survey.html"; // Redirect to survey.html
-    })
-    .catch(error => console.error("Error:", error));
-  });
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+                if (remainingTime > 0) {
+                    remainingTime--;
+                } else {
+                    clearInterval(timerInterval);
+                    alert("The survey time is over!");
+                    // Optional: disable form or redirect here
+                }
+            }
+
+            updateTimer(); // initial call
+            const timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        // Start the countdown from 15 minutes (900 seconds)
+        startCountdown(900);
+
+        // Form submission
+        document.getElementById("myForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let formData = {
+                name: this.name.value,
+                date: this.date.value
+            };
+
+            fetch("https://script.google.com/macros/s/AKfycbyeRQKjBOZJCoEQsqZrll-BKnVHjOlywudbRsmWdC6KeY3vLHeOUYm7whkoyJmwLXx4Ig/exec", {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            })
+                .then(() => {
+                    alert("Participated successfully!");
+                    window.location.href = "survey.html";
+                })
+                .catch(error => console.error("Error:", error));
+        });
+
 </script>
 
     
