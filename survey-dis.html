@@ -190,46 +190,67 @@
         </form>
     </div>
     
+
 <script>
-      // Countdown logic
-        function startCountdown(durationInSeconds) {
-            let remainingTime = durationInSeconds;
-
+        // Change this ID for each new survey session
+        const surveyID = "survey_2025_04_08"; // Change this for every new survey
+        const countdownKey = `surveyCountdownEndTime_${surveyID}`;
+        const countdownDuration = 8; 
+    
+        function startCountdown() {
+            let endTime = localStorage.getItem(countdownKey);
+            if (!endTime) {
+                endTime = Date.now() + countdownDuration * 1000;
+                localStorage.setItem(countdownKey, endTime);
+            } else {
+                endTime = parseInt(endTime);
+            }
+    
             function updateTimer() {
-                let hours = Math.floor(remainingTime / 3600);
-                let minutes = Math.floor((remainingTime % 3600) / 60);
-                let seconds = remainingTime % 60;
-
+                const now = Date.now();
+                let remaining = Math.floor((endTime - now) / 1000);
+    
+                if (remaining <= 0) {
+                    clearInterval(timerInterval);
+                    localStorage.removeItem(countdownKey);
+                    disableSurvey();
+                    return;
+                }
+    
+                const hours = Math.floor(remaining / 3600);
+                const minutes = Math.floor((remaining % 3600) / 60);
+                const seconds = remaining % 60;
+    
                 document.getElementById('hours').textContent = String(hours).padStart(2, '0');
                 document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
                 document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
-                if (remainingTime > 0) {
-                    remainingTime--;
-                } else {
-                    clearInterval(timerInterval);
-                    alert("survey's timeout!");
-                    window.location.href = "home.html";
-                    // Optional: disable form or redirect here
-                }
             }
-
-            updateTimer(); // initial call
+    
+            function disableSurvey() {
+                document.body.innerHTML = `
+                    <div style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;">
+                        <h1 style="color:#cc0000;">Survey time is over!</h1>
+                        <p style="color:#555;">Thank you for your interest.</p>
+                    </div>
+                `;
+            }
+    
+            updateTimer(); // Initial display
             const timerInterval = setInterval(updateTimer, 1000);
         }
-
-        // Start the countdown from 15 minutes (900 seconds)
-        startCountdown(86400);
-
+    
+        // Start the countdown
+        startCountdown();
+    
         // Form submission
         document.getElementById("myForm").addEventListener("submit", function (e) {
             e.preventDefault();
-
+    
             let formData = {
                 name: this.name.value,
                 date: this.date.value
             };
-
+    
             fetch("https://script.google.com/macros/s/AKfycbyeRQKjBOZJCoEQsqZrll-BKnVHjOlywudbRsmWdC6KeY3vLHeOUYm7whkoyJmwLXx4Ig/exec", {
                 method: "POST",
                 mode: "no-cors",
@@ -242,8 +263,9 @@
                 })
                 .catch(error => console.error("Error:", error));
         });
+    </script>
+    
 
-</script>
 
     
     
