@@ -192,78 +192,87 @@
     
 
 <script>
-        // Change this ID for each new survey session
-        const surveyID = "survey_2025_04_08"; // Change this for every new survey
-        const countdownKey = `surveyCountdownEndTime_${surveyID}`;
-        const countdownDuration = 8; 
-    
-        function startCountdown() {
-            let endTime = localStorage.getItem(countdownKey);
-            if (!endTime) {
-                endTime = Date.now() + countdownDuration * 1000;
-                localStorage.setItem(countdownKey, endTime);
-            } else {
-                endTime = parseInt(endTime);
-            }
-    
-            function updateTimer() {
-                const now = Date.now();
-                let remaining = Math.floor((endTime - now) / 1000);
-    
-                if (remaining <= 0) {
-                    clearInterval(timerInterval);
-                    localStorage.removeItem(countdownKey);
-                    disableSurvey();
-                    return;
-                }
-    
-                const hours = Math.floor(remaining / 3600);
-                const minutes = Math.floor((remaining % 3600) / 60);
-                const seconds = remaining % 60;
-    
-                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-            }
-    
-            function disableSurvey() {
-                document.body.innerHTML = `
-                    <div style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;">
-                        <h1 style="color:#cc0000;">Survey time is over!</h1>
-                        <p style="color:#555;">Thank you for your interest.</p>
-                    </div>
-                `;
-            }
-    
-            updateTimer(); // Initial display
-            const timerInterval = setInterval(updateTimer, 1000);
+    const surveyID = "survey_2025_04_07"; // Change this for new surveys
+    const countdownKey = `surveyCountdownEndTime_${surveyID}`;
+    const endedFlagKey = `surveyEnded_${surveyID}`;
+    const countdownDuration = 900; // 15 minutes
+
+    function startCountdown() {
+        // 🛑 If survey already ended, block it immediately
+        if (localStorage.getItem(endedFlagKey)) {
+            disableSurvey();
+            return;
         }
-    
-        // Start the countdown
-        startCountdown();
-    
-        // Form submission
-        document.getElementById("myForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-    
-            let formData = {
-                name: this.name.value,
-                date: this.date.value
-            };
-    
-            fetch("https://script.google.com/macros/s/AKfycbyeRQKjBOZJCoEQsqZrll-BKnVHjOlywudbRsmWdC6KeY3vLHeOUYm7whkoyJmwLXx4Ig/exec", {
-                method: "POST",
-                mode: "no-cors",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData)
+
+        // 🟢 If countdown not saved, set a new one
+        let endTime = localStorage.getItem(countdownKey);
+        if (!endTime) {
+            endTime = Date.now() + countdownDuration * 1000;
+            localStorage.setItem(countdownKey, endTime);
+        } else {
+            endTime = parseInt(endTime);
+        }
+
+        function updateTimer() {
+            const now = Date.now();
+            let remaining = Math.floor((endTime - now) / 1000);
+
+            if (remaining <= 0) {
+                clearInterval(timerInterval);
+                localStorage.removeItem(countdownKey);
+                localStorage.setItem(endedFlagKey, "true"); // 🚩 Set end flag
+                disableSurvey();
+                return;
+            }
+
+            const hours = Math.floor(remaining / 3600);
+            const minutes = Math.floor((remaining % 3600) / 60);
+            const seconds = remaining % 60;
+
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateTimer(); // Initial call
+        const timerInterval = setInterval(updateTimer, 1000);
+    }
+
+    function disableSurvey() {
+        document.body.innerHTML = `
+            <div style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;">
+                <h1 style="color:#cc0000;">Survey time is over!</h1>
+                <p style="color:#555;">Thank you for your interest.</p>
+            </div>
+        `;
+    }
+
+    // 🔁 Start the countdown logic
+    startCountdown();
+
+    // ✅ Form submission stays the same
+    document.getElementById("myForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let formData = {
+            name: this.name.value,
+            date: this.date.value
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbyeRQKjBOZJCoEQsqZrll-BKnVHjOlywudbRsmWdC6KeY3vLHeOUYm7whkoyJmwLXx4Ig/exec", {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+        })
+            .then(() => {
+                alert("Participated successfully!");
+                window.location.href = "survey.html";
             })
-                .then(() => {
-                    alert("Participated successfully!");
-                    window.location.href = "survey.html";
-                })
-                .catch(error => console.error("Error:", error));
-        });
-    </script>
+            .catch(error => console.error("Error:", error));
+    });
+</script>
+
     
 
 
