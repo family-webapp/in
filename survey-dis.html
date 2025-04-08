@@ -192,19 +192,12 @@
     
 
 <script>
-    const surveyID = "survey_1st; // Change this for new surveys
+    // Change this ID for each new survey session
+    const surveyID = "survey_1st"; // Change this for every new survey
     const countdownKey = `surveyCountdownEndTime_${surveyID}`;
-    const endedFlagKey = `surveyEnded_${surveyID}`;
     const countdownDuration = 86400; // 15 minutes
 
     function startCountdown() {
-        // 🛑 If survey already ended, block it immediately
-        if (localStorage.getItem(endedFlagKey)) {
-            disableSurvey();
-            return;
-        }
-
-        // 🟢 If countdown not saved, set a new one
         let endTime = localStorage.getItem(countdownKey);
         if (!endTime) {
             endTime = Date.now() + countdownDuration * 1000;
@@ -220,7 +213,6 @@
             if (remaining <= 0) {
                 clearInterval(timerInterval);
                 localStorage.removeItem(countdownKey);
-                localStorage.setItem(endedFlagKey, "true"); // 🚩 Set end flag
                 disableSurvey();
                 return;
             }
@@ -234,23 +226,23 @@
             document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
         }
 
-        updateTimer(); // Initial call
+        function disableSurvey() {
+            document.body.innerHTML = `
+                <div style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;">
+                    <h1 style="color:#cc0000;font-size: 20px;margin-bottom: 5px;">time's out!</h1>
+                    <p style="color:#555;font-size: 15px;">Thank you for your interest.</p>
+                </div>
+            `;
+        }
+
+        updateTimer(); // Initial display
         const timerInterval = setInterval(updateTimer, 1000);
     }
 
-    function disableSurvey() {
-        document.body.innerHTML = `
-            <div style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;">
-                <h1 style="color:#cc0000;font-size:20px;margin-bottom: 5px;">time's out!</h1>
-                <p style="color:#555;font-size: 15px;">Thank you for your interest.</p>
-            </div>
-        `;
-    }
-
-    // 🔁 Start the countdown logic
+    // Start the countdown
     startCountdown();
 
-    // ✅ Form submission stays the same
+    // Form submission
     document.getElementById("myForm").addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -272,6 +264,7 @@
             .catch(error => console.error("Error:", error));
     });
 </script>
+
 
     
 
