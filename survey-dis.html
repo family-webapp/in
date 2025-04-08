@@ -192,10 +192,10 @@
     
 
 <script>
-    const surveyID = "survey_2025_04_07"; // Change this for new surveys
+    const surveyID = "survey_1st; // Change this for new surveys
     const countdownKey = `surveyCountdownEndTime_${surveyID}`;
     const endedFlagKey = `surveyEnded_${surveyID}`;
-    const countdownDuration = 900; // 15 minutes
+    const countdownDuration = 86400; // 15 minutes
 
     function startCountdown() {
         // 🛑 If survey already ended, block it immediately
@@ -241,8 +241,8 @@
     function disableSurvey() {
         document.body.innerHTML = `
             <div style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;">
-                <h1 style="color:#cc0000;">Survey time is over!</h1>
-                <p style="color:#555;">Thank you for your interest.</p>
+                <h1 style="color:#cc0000;font-size:20px;margin-bottom: 5px;">time's out!</h1>
+                <p style="color:#555;font-size: 15px;">Thank you for your interest.</p>
             </div>
         `;
     }
