@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Survey Results</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('results.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 20px;
+}
+
+   
+
+    .table-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      /* Smooth touch scrolling */
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      cursor: grab;
+      /* Optional: visual cue */
+      margin-top: 240px;
+    }
+
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+      height: 515px;
+    }
+
+    th,
+    td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      white-space: nowrap;
+      /* This keeps everything in one line */
+    }
+
+    th {
+      background-color: #2d89ef;
+      color: white;
+      font-weight: bold;
+
+
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .correct-answers {
+      background-color: #fff8dc;
+      /* Light gold */
+      font-weight: bold;
+      border-left: 5px solid #f0ad4e;
+    }
+
+    .correct-answers td {
+      color: #333;
+    }
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+
+
+    .top-member {
+      background-color: #e0ffe0 !important;
+      font-weight: bold;
+      border-left: 5px solid #28a745;
+    }
+
+    @media (max-width: 768px) {
+      table {
+        font-size: 14px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+      }
+
+      h1 {
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="table-container">
+    <table>
+
+
+      <thead>
+        <tr>
+          <th>Member Name</th>
+          <th>Points</th>
+          <th>Fav songs</th>
+          <th>Fav colour</th>
+          <th>Fav singer</th>
+          <th>Fav sports</th>
+          <th>Fav season</th>
+          <th>Fav activity</th>
+          <th>Fav fastfood</th>
+          <th>Fav softdrink</th>
+          <th>Most used app</th>
+          <th>Fav musical-in..</th>
+          <th>behaviour(no points)</th>
+          <th>Wanna go on a vacation with</th>
+          <th>Thinks about Manash's personality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="correct-answers">
+          <td>Correct Answers</td>
+          <td>11</td>
+          <td>Sad songs</td>
+          <td>Blue colour</td>
+          <td>Arijit Singh</td>
+          <td>Cricket</td>
+          <td>Winter</td>
+          <td>Crafting</td>
+          <td>ManChurian</td>
+          <td>Sprite</td>
+          <td>YouTube</td>
+          <td>Guitar</td>
+          <td>Funny</td>
+          <td>Brothers</td>
+          <td>sar chatta hai..</td>
+        </tr>
+
+        <tr class="top-member">
+          <td>Sksi (1st)</td>
+          <td>05</td>
+          <td>Sad songs</td>
+          <td>Green colour</td>
+          <td>Arijit singh</td>
+          <td>Cricket</td>
+          <td>Summer</td>
+          <td>Crafting</td>
+          <td>Panipuri</td>
+          <td>Coca cola</td>
+          <td>Youtube</td>
+          <td>Dholak</td>
+          <td>Entertaining</td>
+          <td>Other_?</td>
+          <td>Bandar...</td>
+        </tr>
+
+        <tr>
+          <td>Himanshu </td>
+          <td>04</td>
+          <td>Sad songs</td>
+          <td>Red colour</td>
+          <td>Arjit singh</td>
+          <td>Cricket</td>
+          <td>Summer</td>
+          <td>Watching-screen</td>
+          <td>Panipuri</td>
+          <td>MaaZa</td>
+          <td>Youtube</td>
+          <td>Harmunium</td>
+          <td>Funny</td>
+          <td>Parents</td>
+          <td>sar chatta hai..</td>
+        </tr>
+
+
+        <tr>
+          <td>Priyanshu</td>
+          <td>03</td>
+          <td>Freindship songs</td>
+          <td>Red colour</td>
+          <td>honey singh</td>
+          <td>Cricket</td>
+          <td>Summer</td>
+          <td>Watching screen</td>
+          <td>chowmmein</td>
+          <td>Sprite</td>
+          <td>Youtube</td>
+          <td>Dholak</td>
+          <td>Funny</td>
+          <td>Relatives</td>
+          <td>Bokka...</td>
+        </tr>
+
+
+
+
+        <tr>
+          <td>Mala</td>
+          <td>03</td>
+          <td>Patriotic songs</td>
+          <td>Maroon colour</td>
+          <td>Arijit singh</td>
+          <td>Football(soccer)</td>
+          <td>Summer</td>
+          <td>Crafting</td>
+          <td>Panipuri</td>
+          <td>MaaZa</td>
+          <td>Youtube</td>
+          <td>Dholak</td>
+          <td>Funny</td>
+          <td>Other_?</td>
+          <td>skip...</td>
+        </tr>
+
+        <tr>
+          <td>Jiya</td>
+          <td colspan="5">Crossed the deadline: will join from next survey</td>
+        </tr>
+
+        <tr>
+          <td>join next survey: </td>
+          <td colspan="11"><a href="https://family-webapp.github.io/in/survey-dis.html">Today's survey</a></td>
+         
+        </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+  <script>
+    const tableContainer = document.querySelector('.table-container');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    tableContainer.addEventListener('mousedown', (e) => {
+      isDown = true;
+      tableContainer.classList.add('active');
+      startX = e.pageX - tableContainer.offsetLeft;
+      scrollLeft = tableContainer.scrollLeft;
+    });
+
+    tableContainer.addEventListener('mouseleave', () => {
+      isDown = false;
+      tableContainer.classList.remove('active');
+    });
+
+    tableContainer.addEventListener('mouseup', () => {
+      isDown = false;
+      tableContainer.classList.remove('active');
+    });
+
+    tableContainer.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - tableContainer.offsetLeft;
+      const walk = (x - startX) * 2; // scroll speed
+      tableContainer.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+
+
+</body>
+
+</html>
