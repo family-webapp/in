@@ -191,79 +191,69 @@
     </div>
     
 
-<script>
-    // Change this ID for each new survey session
-    const surveyID = "survey_1st"; // Change this for every new survey
-    const countdownKey = `surveyCountdownEndTime_${surveyID}`;
-    const countdownDuration = 86400; // 15 minutes
-
-    function startCountdown() {
-        let endTime = localStorage.getItem(countdownKey);
-        if (!endTime) {
-            endTime = Date.now() + countdownDuration * 1000;
-            localStorage.setItem(countdownKey, endTime);
-        } else {
-            endTime = parseInt(endTime);
-        }
-
-        function updateTimer() {
-            const now = Date.now();
-            let remaining = Math.floor((endTime - now) / 1000);
-
-            if (remaining <= 0) {
-                clearInterval(timerInterval);
-                localStorage.removeItem(countdownKey);
-                disableSurvey();
-                return;
-            }
-
-            const hours = Math.floor(remaining / 3600);
-            const minutes = Math.floor((remaining % 3600) / 60);
-            const seconds = remaining % 60;
-
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-        }
-
-        function disableSurvey() {
-            document.body.innerHTML = `
-                <div style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;">
-                    <h1 style="color:#cc0000;font-size: 20px;margin-bottom: 5px;">time's out!</h1>
-                    <p style="color:#555;font-size: 15px;">Thank you for your interest.</p>
-                </div>
-            `;
-        }
-
-        updateTimer(); // Initial display
-        const timerInterval = setInterval(updateTimer, 1000);
-    }
-
-    // Start the countdown
-    startCountdown();
-
-    // Form submission
+<!-- JavaScript -->
+  <script>
+    // Form handling
     document.getElementById("myForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        let formData = {
-            name: this.name.value,
-            date: this.date.value
-        };
-
-        fetch("https://script.google.com/macros/s/AKfycbyeRQKjBOZJCoEQsqZrll-BKnVHjOlywudbRsmWdC6KeY3vLHeOUYm7whkoyJmwLXx4Ig/exec", {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
+      e.preventDefault();
+  
+      let formData = {
+        name: this.name.value,
+        date: this.date.value
+      };
+  
+      fetch("https://script.google.com/macros/s/AKfycbyeRQKjBOZJCoEQsqZrll-BKnVHjOlywudbRsmWdC6KeY3vLHeOUYm7whkoyJmwLXx4Ig/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      })
+        .then(() => {
+          alert("Participated successfully!");
+          window.location.href = "survey.html";
         })
-            .then(() => {
-                alert("Participated successfully!");
-                window.location.href = "survey.html";
-            })
-            .catch(error => console.error("Error:", error));
+        .catch(error => console.error("Error:", error));
     });
-</script>
+  
+    // Countdown to specific date
+    const deadline = new Date("2025-04-12T07:53:00");
+  
+    function updateCountdown() {
+      const now = new Date();
+      const timeLeft = deadline - now;
+  
+      if (timeLeft > 0) {
+        const hours = String(Math.floor((timeLeft / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+        const minutes = String(Math.floor((timeLeft / (1000 * 60)) % 60)).padStart(2, '0');
+        const seconds = String(Math.floor((timeLeft / 1000) % 60)).padStart(2, '0');
+  
+        document.getElementById("bf-hours").textContent = hours;
+        document.getElementById("bf-minutes").textContent = minutes;
+        document.getElementById("bf-seconds").textContent = seconds;
+      } else {
+        document.querySelector(".countdown-container").textContent = "Survey time is over!";
+  
+        // Disable form fields
+        const form = document.getElementById("myForm");
+        Array.from(form.elements).forEach(elem => elem.disabled = true);
+  
+        // Add message
+        const msg = document.createElement("p");
+        msg.textContent = "Sorry, the survey deadline has passed.";
+        msg.style.color = "#777";
+        msg.style.fontWeight = "bold";
+        msg.style.marginTop = "25px";
+        form.parentNode.appendChild(msg);
+  
+        return;
+      }
+  
+      setTimeout(updateCountdown, 1000);
+    }
+  
+    updateCountdown();
+  </script>
+  
 
 
     
