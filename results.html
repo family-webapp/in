@@ -10,35 +10,43 @@
       box-sizing: border-box;
     }
 
-    body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('results.jpg') no-repeat center center fixed;
-  background-size: cover;
-  margin: 0;
-  padding: 20px;
-}
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('results.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
 
-   
+    }
+
+
 
     .table-container {
+      width: 100%;
+      /* ✅ Full width */
+      padding: 0;
+      /* ✅ No inner padding */
+      margin: 0;
+      /* ✅ Remove default margin */
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      /* Smooth touch scrolling */
       background-color: white;
-      border-radius: 8px;
+      border-radius: 0px;
+      /* Optional: square edges to match full-width feel */
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       cursor: grab;
-      /* Optional: visual cue */
-      margin-top: 140px;
+      margin-top: 120px;
+      /* You can keep or adjust this */
     }
+
 
 
     table {
       width: 100%;
       border-collapse: collapse;
       min-width: 600px;
-      height: 550px;
+      height: 530px;
     }
+
 
     th,
     td {
