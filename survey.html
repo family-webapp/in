@@ -6,16 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>family-survey.in</title>
     <link rel="stylesheet" href="survey-style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+
 </head>
 
 <body>
 
-        <form id ="surveyform">
-            <section>
+    <form id="surveyform" action="">
+        <section>
             <div>
-                <p>1.which of the given colours are most liked by Manash?</p>
-                <input id="maroon" type="radio" name="fav-color" value="maroon">
-                <label for="maroon">Maroon</label>
+                <p>1.Do you think Priyanshu is involved in ladkibazi( :)?</p>
+                <input id="yess" type="radio" name="ladki" value="yses">
+                <label for="yess">Yes 100%</label>
+
+                <input id="no" type="radio" name="ladki" value="no">
+                <label for="no">Nope</label>
+
+                <input id="May" type="radio" name="ladki" value="May">
+                <label for="May">i know what's true but can't answer</label>
+
+            </div>
+
+            <div>
+                <p>2.kya apko lagta hai ki priyanshu kisi parkar ka nasha karte hain?</p>
+                <input id="Yes" type="radio" name="toxic" value="Yes">
+                <label for="Yes">Yes 100%</label>
+
+                <input id="nope" type="radio" name="toxic" value="nope">
+                <label for="nope">Nope</label>
+
+                <input id="maybe" type="radio" name="toxic" value="maybe">
+                <label for="maybe">Don't know but still have doubt</label>
+
+            </div>
+
+            <div>
+                <p>3.Priyanshu ki sabse pasandida dish kon si hai?</p>
+                <input id="paneer" type="radio" name="fav-dish" value="paneer">
+                <label for="panner">panner tika</label>
+
+                <input id="pau" type="radio" name="fav-dish" value="pau">
+                <label for="pau">Paw Bhaji</label>
+
+                <input id="chicken" type="radio" name="fav-dish" value="chicken">
+                <label for="chicken">Chicken chilli</label>
+
+                <input id="egg" type="radio" name="fav-dish" value="egg">
+                <label for="egg">Egg curry</label>
+
+                <input id="sweet" type="radio" name="fav-dish" value="sweet">
+                <label for="sweet">Sweet pulao</label>
+            </div>
+
+            <div>
+                <p>4.which of the given colours are most liked by priyanshu?</p>
+                <input id="white" type="radio" name="fav-color" value="white">
+                <label for="white">White colour</label>
 
                 <input id="red" type="radio" name="fav-color" value="red">
                 <label for="red">Red colour</label>
@@ -31,7 +77,7 @@
             </div>
 
             <div>
-                <p>2.Choose the most liked softdrink of Manash !</p>
+                <p>5.Choose the most liked softdrink of priyanshu!</p>
                 <input id="maaza" type="radio" name="fav-drink" value="maaza">
                 <label for="maaza">MaaZa</label>
 
@@ -47,88 +93,104 @@
                 <input id="thumb up" type="radio" name="fav-drink" value="thumb up">
                 <label for="thumb up">Pepsi</label>
             </div>
-            <div><p>3.if Manash were given only 1 fast-food to choose it would be:</p>
-            <input id="samosa" type="radio" name="fav-food" value="samosa">
-            <label for="samosa">Samosa</label>
 
-            <input id="Panipuri" type="radio" name="fav-food" value="Panipuri">
-            <label for="Panipuri">Panipuri</label>
+            <div>
+                <p>6.what do you think fav-bike brand of priyanshu?</p>
+                <input id="samosa" type="radio" name="fav-food" value="samosa">
+                <label for="samosa">Royal enfield</label>
 
-            <input id="chowmein" type="radio" name="fav-food" value="chowmein">
-            <label for="chowmein">Chao-mein</label>
+                <input id="Panipuri" type="radio" name="fav-food" value="Panipuri">
+                <label for="Panipuri">K.T.M</label>
 
-            <input id="manchu" type="radio" name="fav-food" value="manchu">
-            <label for="manchu">Man-Churian</label>
+                <input id="chowmein" type="radio" name="fav-food" value="chowmein">
+                <label for="chowmein">R15</label>
 
-            <input id="pasta" type="radio" name="fav-food" value="pasta">
-            <label for="pasta">Pasta</label>
-        </div>
-        <div><p>4.who do you think Manash's primary-choice to go on a vacation?</p>
-            <input id="parents" type="radio" name="fav-person" value="parents">
-            <label for="parents">Parents</label>
+                <input id="manchu" type="radio" name="fav-food" value="manchu">
+                <label for="manchu">(hero honda:)</label>
 
-            <input id="freinds" type="radio" name="fav-person" value="freinds">
-            <label for="freinds">Freinds</label>
+                <input id="pasta" type="radio" name="fav-food" value="pasta">
+                <label for="pasta">hayabusa</label>
+            </div>
 
-            <input id="relatives" type="radio" name="fav-person" value="relatives">
-            <label for="relatives">Relative</label>
+            <div>
+                <p>7.who do you think pryanshu's primary-choice to go on a vacation?</p>
+                <input id="parents" type="radio" name="fav-person" value="parents">
+                <label for="parents">brothers</label>
 
-            <input id="alone" type="radio" name="fav-person" value="alone">
-            <label for="alone">Alone</label>
+                <input id="freinds" type="radio" name="fav-person" value="freinds">
+                <label for="freinds">Freinds</label>
 
-            <input id="other" type="radio" name="fav-person" value="other">
-            <label for="other">Brothers</label>
-        </div>
-        <div><p>5.choose the category of the songs which Manash likes to hear.</p>
-            <input id="sad" type="radio" name="fav-song" value="sad">
-            <label for="sad">Sad song</label>
+                <input id="relatives" type="radio" name="fav-person" value="relatives">
+                <label for="relatives">Relative</label>
 
-            <input id="motivational" type="radio" name="fav-song" value="motivational">
-            <label for="motivational">Motivational Songs</label>
+                <input id="other" type="radio" name="fav-person" value="other">
+                <label for="other">girlfreind</label>
 
-            <input id="patriotic" type="radio" name="fav-song" value="patriotic">
-            <label for="patriotic">Patriotic songs</label>
+                <input id="alone" type="radio" name="fav-person" value="alone">
+                <label for="alone">Alone</label>
 
-            <input id="romantic" type="radio" name="fav-song" value="romantic">
-            <label for="romantic">Romantic songs</label>
+            </div>
 
-            <input id="freindship" type="radio" name="fav-song" value="freindship">
-            <label for="freindship">Freindship songs</label>
-            
-        <div><p>6.who is the favorite singer of Manash?</p>
-            <input id="honey" type="radio" name="fav-singer" value="honey">
-            <label for="honey">Honey singh</label>
+            <div>
+                <p>8.choose the category of the songs which Priyanshu likes to hear.</p>
+                <input id="bhojpuri" type="radio" name="fav-song" value="bhojpuri">
+                <label for="bhojpuri">Bhojpuri song</label>
 
-            <input id="arjit" type="radio" name="fav-singer" value="arjit">
-            <label for="arjit">Arjit singh</label>
+                <input id="punjabi" type="radio" name="fav-song" value="punjabi">
+                <label for="punjabi">Punjabi Songs</label>
 
-            <input id="jubin" type="radio" name="fav-singer" value="jubin">
-            <label for="jubin">Jubin nautial</label>
+                <input id="hairanvi" type="radio" name="fav-song" value="hairanvi">
+                <label for="hairanvi">Hairanvi songs</label>
 
-            <input id="tony" type="radio" name="fav-singer" value="tony">
-            <label for="tony">Tony kakkar</label>
+                <input id="marathi" type="radio" name="fav-song" value="marathi">
+                <label for="marathi">Marathi songs</label>
 
-            <input id="sonu" type="radio" name="fav-singer" value="sonu">
-            <label for="sonu">Sonu nigam</label>
-        </div>
-        <div><p>7.what do you think about manash behaviour?</p>
-            <input id="angry" type="radio" name="behave" value="angry">
-            <label for="angry">Angry</label>
+                <input id="english" type="radio" name="fav-song" value="english">
+                <label for="english">English songs</label>
 
-            <input id="funny" type="radio" name="behave" value="funny">
-            <label for="funny">Funny</label>
+                <div>
+                    <p>9.who is the favorite singer of Priyanshu?</p>
+                    <input id="pawan" type="radio" name="fav-singer" value="pawan">
+                    <label for="pawan">Pawan singh</label>
 
-            <input id="boring" type="radio" name="behave" value="boring">
-            <label for="boring">Boring</label>
+                    <input id="mausam" type="radio" name="fav-singer" value="mausam">
+                    <label for="mausam">Mausam sharma</label>
 
-            <input id="entertaining" type="radio" name="behave" value="entertaining">
-            <label for="entertaining">Entertaining</label>       
-        </div>
+                    <input id="karan" type="radio" name="fav-singer" value="karan">
+                    <label for="karan">Karan oujhla</label>
 
-               <div>
-                    <p>8.which of the given apps is most used by manash?</p>
-                    <input id="josh" type="radio" name="app" value="josh">
-                    <label for="josh">Josh</label>
+                    <input id="khesari" type="radio" name="fav-singer" value="khesari">
+                    <label for="khesari">khesari lal yadav</label>
+
+                    <input id="arjit" type="radio" name="fav-singer" value="arjit">
+                    <label for="arjit">Arjit singh</label>
+                </div>
+
+                <div>
+                    <p>10.what do you think about Priyanshu's behaviour?</p>
+                    <input id="angry" type="radio" name="behave" value="angry">
+                    <label for="angry">Angry</label>
+
+                    <input id="toxic" type="radio" name="behave" value="toxic">
+                    <label for="toxic">Toxic</label>
+
+                    <input id="funny" type="radio" name="behave" value="funny">
+                    <label for="funny">Funny</label>
+
+                    <input id="boring" type="radio" name="behave" value="boring">
+                    <label for="boring">Boring</label>
+
+                    <input id="entertaining" type="radio" name="behave" value="entertaining">
+                    <label for="entertaining">Entertaining</label>
+
+                    
+                </div>
+
+
+                <div>
+                    <p>11.which of the given apps is most used by Priyanshu?</p>
+                    <input id="insta" type="radio" name="app" value="insta">
+                    <label for="insta">instagram</label>
 
                     <input id="facebook" type="radio" name="app" value="facebook">
                     <label for="facebook">Facebook</label>
@@ -136,22 +198,22 @@
                     <input id="youtube" type="radio" name="app" value="youtube">
                     <label for="youtube">Youtube</label>
 
-                    <input id="kinemaster" type="radio" name="app" value="kinemaster">
-                    <label for="kinemaster">Kine master</label>
+                    <input id="snap" type="radio" name="app" value="snap">
+                    <label for="snap">snapchat</label>
 
-                    <input id="google" type="radio" name="app" value="google">
-                    <label for="google">Google</label>
+                    <input id="games" type="radio" name="app" value="games">
+                    <label for="games">Specific games</label>
                 </div>
 
 
 
                 <div>
-                    <p>9.what is manash's favorite activity which he loves to do in freetime?</p>
-                    <input id="drawing" type="radio" name="fav-activity" value="drawing">
-                    <label for="drawing">Drawing</label>
+                    <p>12.what is priyanshu's favorite activity which he loves to do in freetime?</p>
+                    <input id="roaming" type="radio" name="fav-activity" value="roaming">
+                    <label for="roaming">roaming with freinds</label>
 
-                    <input id="craft" type="radio" name="fav-activity" value="craft">
-                    <label for="craft">Crafting</label>
+                    <input id="talking" type="radio" name="fav-activity" value="talking">
+                    <label for="talking">Talking with girlfreind</label>
 
                     <input id="wat-scr" type="radio" name="fav-activity" value="wat-scr">
                     <label for="wat-scr">Watching-screen</label>
@@ -162,7 +224,7 @@
                 </div>
 
                 <div>
-                    <p>10.Choose the favorite sports of manash?</p>
+                    <p>13.Choose the favorite sports of Priyanshu?</p>
                     <input id="foot" type="radio" name="fav-sport" value="foot">
                     <label for="foot">Football</label>
 
@@ -175,30 +237,33 @@
                     <input id="hockey" type="radio" name="fav-sport" value="hockey">
                     <label for="hockey">Hockey</label>
 
+                    <input id="kabadi" type="radio" name="fav-sport" value="kabadi">
+                    <label for="kabadi">Kabadi</label>
+
+
                 </div>
 
                 <div>
-                    <p>11.Manash's most favorite musical instrument?</p>
-                    <input id="guitar" type="radio" name="fav-m-inst" value="guitar">
-                    <label for="guitar">Guitar</label>
+                    <p>14.Priyanshu's favorite car brand?</p>
+                    
+                    <input id="mer" type="radio" name="fav-carbrand" value="mer">
+                    <label for="mer">Merecedes</label>
 
-                    <input id="dholak" type="radio" name="fav-m-inst" value="dholak">
-                    <label for="dholak">Dholak</label>
+                    <input id="bmw" type="radio" name="fav-carbrand" value="bmw">
+                    <label for="bmw">B.M.W</label>
 
-                    <input id="tabla" type="radio" name="fav-m-inst" value="tabla">
-                    <label for="tabla">Tabla</label>
+                    <input id="mah" type="radio" name="fav-carbrand" value="mah">
+                    <label for="mah">Mahendra</label>
 
-                    <input id="harmunium" type="radio" name="fav-m-inst" value="harmunium">
-                    <label for="harmunium">Harmunium</label>
+                    <input id="suz" type="radio" name="fav-carbrand" value="suz">
+                    <label for="suz">Suzuki</label>
 
-                    <input id="piano" type="radio" name="fav-m-inst" value="piano">
-                    <label for="piano">Piano</label>
-                </div>
-
+                    <input id="rolls" type="radio" name="fav-carbrand" value="rolls">
+                    <label for="rolls">Rolls-royace</label>
 
 
                 <div>
-                    <p>12.which season is most adorable season of Manash?</p>
+                    <p>15.which season is most adorable season of priyanshu?</p>
                     <input id="summer" type="radio" name="fav-sea" value="summer">
                     <label for="summer">Summer</label>
 
@@ -216,52 +281,85 @@
                 </div>
 
                 <div>
-                    <p>13.Describe Manash personality in few words!</p>
-                    
-                    <input id="personality" type="text" name= "personality" placeholder="I think...">
-                 
+                    <p>16.Describe priyanshu's personality in few words!</p>
 
-        <button type="submit">Submit</button>
-        </form>
+                    <input id="personality" type="text" name="personality"
+                        placeholder="Describe Priyanshu's personality...">
+                </div>
+
+                <div>
+                    <p>17.Apko kya lagta hai priyanshu kis janbar se mel khate hain?</p>
+                    <input id="rel-animal" type="text" name="rel-animal" placeholder="Enter that animal's name...">
+                </div>
+
+                <div>
+                    <p>18.Priyanshu ki charitra ke anusar unka ek alg naam kya ho sakta hai?</p>
+                    <input id="dif-name" type="text" name="dif-name" placeholder="eg: pheku, sadharan, ladkibaaz..">
+                </div>
+
+                <div>
+                    <p>19.woh konsi gandi adat hai jiske karan app priyanshu ke sath rahna pasand nahin karenge?</p>
+                    <input id="bad-habbit" type="text" name="bad-habbit" placeholder="can also say; no bad habbits">
+                </div>
+
+                <div>
+                    <p>20.Priyanshu ka janam din yhan likhen?</p>
+                    <input id="birthday" type="text" name="birthday" placeholder="yaad hai ya nahin">
+                </div>
+
+               
+
+                <button type="submit">Submit</button>
+    </form>
     </section>
 
-  <script>
+
+    <script>
         document.getElementById("surveyform").addEventListener("submit", function (event) {
             event.preventDefault();
 
             let formData = {
-        "fav-color": document.querySelector('input[name="fav-color"]:checked')?.value || "",
-        "fav-drink": document.querySelector('input[name="fav-drink"]:checked')?.value || "",
-        "fav-food": document.querySelector('input[name="fav-food"]:checked')?.value || "",
-        "fav-person": document.querySelector('input[name="fav-person"]:checked')?.value || "",
-        "fav-song": document.querySelector('input[name="fav-song"]:checked')?.value || "",
-        "fav-singer": document.querySelector('input[name="fav-singer"]:checked')?.value || "",
-        "behave": document.querySelector('input[name="behave"]:checked')?.value || "",
-        "app": document.querySelector('input[name="app"]:checked')?.value || "",
-        "fav-activity": document.querySelector('input[name="fav-activity"]:checked')?.value || "",
-        "fav-sport": document.querySelector('input[name="fav-sport"]:checked')?.value || "",
-        "fav-m-inst": document.querySelector('input[name="fav-m-inst"]:checked')?.value || "",
-        "fav-sea": document.querySelector('input[name="fav-sea"]:checked')?.value || "",
-        "personality": document.querySelector('input[name="personality"]')?.value || ""
-    };
+                "ladki": document.querySelector('input[name="ladki"]:checked')?.value || "",
+                "toxic": document.querySelector('input[name="toxic"]:checked')?.value || "",
+                "fav-dish": document.querySelector('input[name="fav-dish"]:checked')?.value || "",
+                "fav-color": document.querySelector('input[name="fav-color"]:checked')?.value || "",
+                "fav-drink": document.querySelector('input[name="fav-drink"]:checked')?.value || "",
+                "fav-food": document.querySelector('input[name="fav-food"]:checked')?.value || "",
+                "fav-person": document.querySelector('input[name="fav-person"]:checked')?.value || "",
+                "fav-song": document.querySelector('input[name="fav-song"]:checked')?.value || "",
+                "fav-singer": document.querySelector('input[name="fav-singer"]:checked')?.value || "",
+                "behave": document.querySelector('input[name="behave"]:checked')?.value || "",
+                "app": document.querySelector('input[name="app"]:checked')?.value || "",
+                "fav-activity": document.querySelector('input[name="fav-activity"]:checked')?.value || "",
+                "fav-sport": document.querySelector('input[name="fav-sport"]:checked')?.value || "",
+                "fav-carbrand": document.querySelector('input[name="fav-carbrand"]:checked')?.value || "",
+                "fav-sea": document.querySelector('input[name="fav-sea"]:checked')?.value || "",
+                "personality": document.querySelector('input[name="personality"]')?.value || "",
+                "rel-animal": document.querySelector('input[name="rel-animal"]')?.value || "",
+                "dif-name": document.querySelector('input[name="dif-name"]')?.value || "",
+                "bad-habbit": document.querySelector('input[name="bad-habbit"]')?.value || "",
+                "birthday": document.querySelector('input[name="birthday"]')?.value || ""
+            };
 
-            fetch("https://script.google.com/macros/s/AKfycbxYngh7-QFr56rhC600m3SaHcsBtLwYby6xRIYHS4K_OEkgUj-OaVRrEE3VY9c1KC3Dvg/exec", {
+            fetch("https://script.google.com/macros/s/AKfycbzrDQxV6JMwnuRoroB6qi7_6lDurExpavNe_IHRr7HUWzqCdh8vlU7_WUAHbCM5jD72/exec", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 mode: "no-cors", // Prevents CORS errors
                 body: JSON.stringify(formData)
             })
-            .then(() => {
-                alert("Survey Submitted Successfully!");
-                document.getElementById("surveyform").reset();
-                window.location.href = "home.html";
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Submission failed. Try again!");
-            });
+                .then(() => {
+                    alert("Survey Submitted Successfully!");
+                    document.getElementById("surveyform").reset();
+                    window.location.href = "home.html";
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("Submission failed. Try again!");
+                });
         });
     </script>
+
+
 
 </body>
 
